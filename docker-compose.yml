@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: fipe_postgres
+    environment:
+      POSTGRES_USER: fipe_user
+      POSTGRES_PASSWORD: fipe_pass
+      POSTGRES_DB: fipe
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: fipe_rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: fipe_guest
+      RABBITMQ_DEFAULT_PASS: fipepass
+
+  redis:
+    image: redis:7
+    container_name: fipe_redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgdata:

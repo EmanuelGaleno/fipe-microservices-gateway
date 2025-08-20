@@ -1,31 +1,31 @@
-services:
-  postgres:
-    image: postgres:16
-    container_name: fipe_postgres
-    environment:
-      POSTGRES_USER: fipe_user
-      POSTGRES_PASSWORD: fipe_pass
-      POSTGRES_DB: fipe
-    ports:
-      - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
+server:
+  port: 8080
 
+spring:
+  application:
+    name: api-gateway
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fipe
+    username: fipe_user
+    password: fipe_pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  cache:
+    type: simple
   rabbitmq:
-    image: rabbitmq:3.13-management
-    container_name: fipe_rabbitmq
-    ports:
-      - "5672:5672"    # porta AMQP (app)
-      - "15672:15672"  # console web do Rabbit
-    environment:
-      RABBITMQ_DEFAULT_USER: fipe_guest
-      RABBITMQ_DEFAULT_PASS: fipepass
+    host: localhost
+    port: 5672
+    username: fipe_guest
+    password: fipepass
 
-  redis:
-    image: redis:7
-    container_name: fipe_redis
-    ports:
-      - "6379:6379"
-
-volumes:
-  pgdata:
+app:
+  fipe:
+    base-url: https://parallelum.com.br/fipe/api/v1
+  rabbit:
+    exchange: fipe.exchange
+    queue:
+      brands: fipe.brands
+    routing:
+      brands: brands

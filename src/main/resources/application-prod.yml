@@ -1,0 +1,28 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: false
+        show_sql: false
+        jdbc:
+          batch_size: 50
+
+  flyway:
+    enabled: true
+    clean-disabled: true
+
+logging:
+  level:
+    com.r2r.fipe.gateway: INFO
+    org.springframework.amqp: WARN
+    org.springframework.data.redis: WARN
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
+    org.springframework.web: WARN
+    org.springframework.security: WARN
+
+app:
+  security:
+    api-key: ${FIPE_API_KEY:prod-api-key-2024}

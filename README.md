@@ -5,7 +5,7 @@ Este projeto implementa a **API-1** (Gateway/Orquestradora) para integração co
 ## 🏗️ Arquitetura
 
 - **API-1**: Gateway/Orquestradora (este projeto)
-- **API-2**: Processadora de filas (projeto separado)
+- **API-2**: Processadora de filas (projeto separado, em desenvolvimento)
 - **Banco**: PostgreSQL com Flyway para migrações
 - **Fila**: RabbitMQ para processamento assíncrono
 - **Cache**: Redis para otimização de consultas
@@ -37,7 +37,7 @@ Este projeto implementa a **API-1** (Gateway/Orquestradora) para integração co
 7. **1.9** ✅ Camada de cache com Redis
 8. **1.10** ✅ Autenticação para proteger endpoints
 
-### 🔄 Requisitos da API-2 (não implementados aqui)
+### 🔄 Requisitos da API-2 (não implementado aqui, em desenvolvimento)
 
 4. **1.4** Lógica para buscar "códigos" e "modelos" dos veículos
 5. **1.5** Lógica para salvar no banco de dados
@@ -191,7 +191,7 @@ docker-compose logs -f
 
 ## 🔄 Próximos Passos
 
-Para completar o sistema, é necessário implementar a **API-2** que irá:
+Para completar o sistema, é necessário implementar a **API-2**(em desenvolvimento) que irá:
 
 1. Consumir mensagens da fila RabbitMQ
 2. Buscar modelos na API FIPE

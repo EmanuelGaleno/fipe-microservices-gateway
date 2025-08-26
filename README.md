@@ -1,6 +1,6 @@
 # API Gateway - Sistema FIPE
 
-Este projeto implementa a **API-1** (Gateway/Orquestradora) para integração com o serviço FIPE, seguindo os requisitos especificados no teste.
+Este projeto implementa a **API-1** (Gateway/Orquestradora) para integração com o serviço FIPE, seguindo os requisitos especificados baseados em um teste.
 
 ## 🏗️ Arquitetura
 

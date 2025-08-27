@@ -54,7 +54,7 @@ Este projeto implementa a **API-1** (Gateway/Orquestradora) para integração co
 
 ```bash
 git clone <repository-url>
-cd api-gateway
+cd fipe-microservices-gateway
 ```
 
 ### 2. Levante os serviços de infraestrutura

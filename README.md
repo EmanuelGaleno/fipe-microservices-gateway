@@ -14,7 +14,7 @@ Este projeto implementa a **API-1** (Gateway/Orquestradora) para integração co
 ## 🚀 Tecnologias
 
 - **Java 17**
-- **Spring Boot 3.5.4**
+- **Spring Boot**
 - **Spring Security**
 - **Spring Data JPA**
 - **Spring AMQP (RabbitMQ)**
